@@ -36,7 +36,16 @@ function generatePassword() {
     } else if( charTypeLower === "special" ) {
         charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
     }
+//return value
+var retVal = "";
+for (var i = 0; i < length; i++) {
+    //will pick a random character from the defined parameters
+    retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
 }
+return retVal;
+}
+alert(generatePassword());
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
