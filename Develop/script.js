@@ -19,8 +19,24 @@
 var length = Number(prompt("How many character would you like your password to be? Please type a number between 8 and 128"));
 console.log(length);
 // which characters
-var charType = prompt("Which character type would you like: uppercase, lowercase, numeric, special?");
+var charType = prompt("Which character type would you like: lowercase, uppercase, numeric, special?");
 console.log(charType);
+
+// function to generate password
+function generatePassword() {
+    //character type selector
+    var charSet = "";
+    var charTypeLower = charType.toLowerCase();
+    if( charTypeLower === "lowercase" ) {
+        charSet = "abcdefghijklmnopqrstuvwxyz";
+    } else if( charTypeLower === "uppercase" ) {
+        charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    } else if( charTypeLower === "numeric" ) {
+        charSet = "0123456789";
+    } else if( charTypeLower === "special" ) {
+        charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+    }
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
